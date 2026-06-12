@@ -32,6 +32,9 @@ class Image(models.Model):
         verbose_name = "Изображение"
         verbose_name_plural = "Изображения"
         ordering = ["position"]
+        indexes = [
+            models.Index(fields=["position"]),
+        ]
 
     def __str__(self):
         return f"{self.place.title} — {self.position}"
